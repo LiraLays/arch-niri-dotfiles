@@ -1,0 +1,24 @@
+ignore-empty-password
+font="BlexMono Nerd Font"
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+# Background by link
+# image="/home/truten/Pictures/wallpapers/wallhaven-q6m69q_2560x1440.png"
+# Or opened 
+screenshots
+
+# Fade in time
+fade-in=0.5
+
+effect-blur=20x6
+# effect-greyscale
+
+indicator
+indicator-radius=200
+indicator-thickness=20
+indicator-caps-lock
+
+text-color=aecfdfff

@@ -1,0 +1,12 @@
+[general]
+live_config_reload = true
+
+[terminal]
+shell = { program = "/bin/zsh" }
+
+[font]
+size = 14
+
+[window]
+decorations = "none"
+

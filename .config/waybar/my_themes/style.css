@@ -1,0 +1,158 @@
+@import 'colors/one-dark.css';
+
+* {
+    border: none;
+    border-radius: 0px;
+    background-color: #1e1e1e;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    min-height: 0;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+tooltip {
+    background: @bg0;
+    border: 1px solid @bg3;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 6px;
+}
+
+.modules-right {
+    background-color: #1e1e1e;
+    /* border: 1px solid #595959; */
+    border-radius: 20px;
+    /* padding-right: 4px; */
+    padding-left: 4px;
+    /* margin: 0 20px 0 0; */
+    margin: 0;
+}
+
+.modules-center {
+    background-color: #1e1e1e;
+    /* border: 1px solid #595959; */
+    border-radius: 20px;
+    padding-right: 0px;
+    padding-left: 11px;
+}
+
+#workspaces {
+    background-color: #1e1e1e;
+    /* border: 1px solid #595959; */
+    border-radius: 20px;
+    padding-right: 4px;
+    padding-left: 4px;
+    /* margin: 0 0 0 20px; */
+    margin: 0;  
+}
+
+#workspaces button {
+    color: @gray;
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#workspaces button.active {
+    color: #89B4FA;
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#workspaces button.focused {
+    color: #d8dee9;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    color: #8982FA;
+    /* color: #3282ff; */
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+   
+#pulseaudio,
+#network,
+#clock,
+#custom-power,
+#custom-notification,
+#window,
+#language,
+#tray
+ {
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin: 0 12px 0 0;
+}
+
+#custom-archicon {
+    background-color: #1e1e1e;
+    color: #d8dee9;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    margin: 0 0 0 20px;  
+}
+
+#custom-archicon {
+    font-size: 20px;
+    color: #89B4FA;
+    padding-right: 17px;
+}
+
+/*
+#pulseaudio:hover,
+#network:hover,
+#clock:hover,
+#custom-power:hover,
+#custom-notification:hover
+#language:hover {
+    border: 1px solid @clean-blue; 
+}
+*/
+
+#clock {
+    color: #89B4FA;
+    /* border: 1px solid @clean-gray; */ 
+}
+
+#custom-notification {
+    color: @fg;
+}
+
+#custom-power {
+    color: @red;
+    margin: 0 12px 0 0;
+}
+
+#pulseaudio {
+    color: @yellow;
+}
+
+#language {
+    color: @green;
+    margin: 0 0 0 0;
+}
+
+#tray {
+    margin: 0 10px 0 0;
+}
+
+#network {
+    color: @purple;
+}

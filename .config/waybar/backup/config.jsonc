@@ -1,0 +1,272 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "margin-left": 4,
+    "margin-right": 4,
+    "margin-top": 2,
+    "margin-bottom": 0,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+    "include": [
+        "~/.config/waybar/quicklinks.json"
+    ],
+    "modules-left": [
+        "niri/workspaces",
+        "group/quicklinks"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "memory",
+        "cpu",
+        "niri/language",
+        "bluetooth",
+        "battery",
+        "custom/ctlcenter",
+        "custom/power"
+    ],
+    "niri/workspaces": {
+        "format": "<span size='larger'>{icon}</span>",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "\uf444",
+            "default": "\uf4c3"
+        },
+        "icon-size": 10,
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "clock": {
+        "format": "{:%d.%m.%Y | %H:%M}",
+        "format-alt": "{:%d.%m.%Y | %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    },
+    "memory": {
+        "interval": 1,
+        "rotate": 360,
+        "format": " {used:0.1f}G",
+        "format-icons": [
+            "󰝦",
+            "󰪞",
+            "󰪟",
+            "󰪠",
+            "󰪡",
+            "󰪢",
+            "󰪣",
+            "󰪤",
+            "󰪥"
+        ],
+        "on-click": "alacritty -e btop"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%",
+        "tooltip-format": "{icon}",
+        "rotate": 360,
+        "format-icons": [
+            "󰝦",
+            "󰪞",
+            "󰪟",
+            "󰪠",
+            "󰪡",
+            "󰪢",
+            "󰪣",
+            "󰪤",
+            "󰪥"
+        ],
+        "on-click": "alacritty -e btop"
+    },
+    "wireplumber": {
+        "format-muted": " ",
+        "format": "{icon}  {volume}%",
+        "tooltip-format": "{volume}%",
+        "on-click": "swayosd-client --output-volume mute-toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "swayosd-client --output-volume raise --max-volume 100",
+        "on-scroll-down": "swayosd-client --output-volume lower",
+        "max-volume": 100,
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "reverse-scrolling": true,
+        "justify": "center",
+        "scroll-step": 1,
+        "smooth-scrolling-threshold": 1
+    },
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-icons": { 
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ], 
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        }
+    },
+    "temperature": {
+        "format": "{temperatureC}°C"
+    },
+    "bluetooth": {
+        "format": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2",
+        "format-connected": "\udb80\udcb1",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click":"alacritty --class bluetui-float -e bluetui"
+    },
+    "niri/language": {
+        "format": "{}",
+        "format-en": "🇺🇸",
+        "format-ru": "🇷🇺",
+        "format-fr": "🇫🇷"
+    },
+    "niri/window": {
+        //"format": "{}"   // <--- these is the default value  
+        "format": "<span weight='bold'>{app_id}</span>",
+        "max-length": 120,
+        "icon": false,
+        "icon-size": 13
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 16
+    },
+    "custom/platform-profile": {
+        "format": "{icon} ",
+        "exec": "~/.config/waybar/platform_profile.sh",
+        "return-type": "json",
+        "restart-interval": 1,
+        "format-icons": {
+            "quiet": "\udb80\udf2a",
+            "balanced": "\udb80\ude10",
+            "performance": "\uf427",
+            "default": "?"
+        }
+    },
+    "custom/power": {
+        "format": "⏻",
+        "exec": "echo fuzzel_powermenu.sh",
+        "on-click": "~/.config/scripts/fuzzel_powermenu.sh",
+        "tooltip": true
+    },
+    "custom/ctlcenter": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t",
+        "menu": "on-click-right",
+        "menu-file": "~/.config/waybar/context/ctlcenter.xml",
+        "menu-actions": {
+            "action-1-1": "alacritty -e btop",
+            "action-1-2": "alacritty -e nvtop",
+            "action-1-3": "hyprctl dispatch exec '[float] alacritty -e pkexec powertop'",
+            "action-1-4": "hyprctl dispatch exec '[float] missioncenter'",
+            "action-2-1": "hyprctl dispatch exec nwg-look",
+            "action-2-2": "hyprctl dispatch exec qt6ct",
+            "action-2-3": "hyprctl dispatch exec kvantummanager",
+            "action-3-1": "hyprctl keyword monitor 'eDP-1,1920x1080@60, auto,1'",
+            "action-3-2": "hyprctl keyword monitor 'eDP-1,1920x1080@90, auto,1'",
+            "action-3-3": "hyprctl keyword monitor 'eDP-1,1920x1080@144,auto,1'",
+            "action-4-1": "~/.local/bin/caffeine shutdown",
+            "action-4-2": "~/.local/bin/caffeine handle-lid-switch",
+            "action-5": "~/.local/bin/powersafe",
+            "action-6": "hyprctl reload"
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "\udb80\udd76",
+            "deactivated": "\udb83\udfaa"
+        }
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": "{icon} ",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥"
+        ],
+        //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
+        "rotate": 0,
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": " ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "/usr/local/bin/ags -t ControlPanel",
+        "interval": 2
+    }
+}

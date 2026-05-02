@@ -1,0 +1,162 @@
+@import "colors/colors-wallust.conf";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    min-height: 0;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid @color3;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @foreground;
+    padding: 6px;
+}
+
+.modules-right {
+    background-color: @background;
+    border: 1px solid @color1;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin: 0 20px 0 0;
+}
+
+.modules-center {
+    background-color: @background;
+    border: 1px solid @color1;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+.modules-left {
+    background-color: @background;
+    border: 1px solid @color1;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin: 0 0 0 20px;    
+}
+
+#workspaces {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#workspaces button {
+    color: @color10;
+    border-radius: 9px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#workspaces button.active {
+    color: @color6;
+    border-radius: 15px 15px 15px 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#workspaces button.focused {
+    color: @color3;
+}
+
+#workspaces button.urgent {
+    color: @color4;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    color: @color5;
+    border-radius: 9px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+   
+#pulseaudio,
+#network,
+#clock,
+#custom-power,
+#custom-notification,
+#window,
+#language,
+#tray
+ {
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin: 0 12px 0 0;
+}
+
+/*
+#pulseaudio:hover,
+#network:hover,
+#clock:hover,
+#custom-power:hover,
+#custom-notification:hover
+#language:hover {
+    border: 1px solid @clean-blue; 
+}
+*/
+
+#clock {
+    color: @color3;
+    /* border: 1px solid @clean-gray; */ 
+}
+
+#custom-notification {
+    color: @foreground;
+}
+
+#custom-power {
+    color: @color5;
+    margin: 0 12px 0 0;
+}
+
+#pulseaudio {
+    color: @color4;
+}
+
+#language {
+    color: @color3;
+    margin: 0 0 0 0;
+}
+
+#tray {
+    margin: 0 10px 0 0;
+}
+
+#custom-printer {
+    background: transparent; /* Оранжевый цвет в стиле Catppuccin, под стать HP */
+    color: #cdd6f4;
+    padding: 0 2px;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+#custom-printer.empty {
+    background: transparent;
+    color: #fab387;
+}
